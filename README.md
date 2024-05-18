@@ -1,1 +1,1 @@
-This is a calculator for "chuanre".
+This is a calculator for "chuan're".
