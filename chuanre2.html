@@ -164,7 +164,7 @@
                 var Vt_1_h = Vt_1 * 3600 ;
                 var Vt_m = Vt_1 * (273 + t_m) / (273 + t_1);
                 var Vt_m_h = Vt_m * 3600;
-                var F = Math.PI * Math.pow(d_in,2) / 4;
+                var F = Math.PI * Math.pow(d_in,2) / 4 * n;
                 var u = Vt_m / F;   
 
                 var Q = Vt_m * rho * c_p * delta_t;
