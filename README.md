@@ -1,1 +1,1 @@
-# This is a calculator for "chuan're".
+# This is a calculator for "huagongyuanli".
