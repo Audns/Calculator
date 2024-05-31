@@ -21,41 +21,46 @@
             color: blue;
         }
         
-    </style></head>
-    <style>
-        html {
-            background-color: blanchedalmond;
-        }
-        body {
-            text-align: left;
-            font-size: 24px;
-        }
-        input {
-            font-size: 24px;
-        }
-        button {
-            width: 300px;
-            height: 50px;
-            color: blue;
-        }
-        
     </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    
     <body>
         <table>
         <tr>
-            <td>t_1(C)</td>
+            <td>d_in/m</td>
+            <td>d_out/m</td>
+            <td>g</td>
+            <td>l/m</td>
+            <td>C_0</td>
+            <td>d/m</td>
+        </tr>
+        <tr>
+            <td>0.020</td>
+            <td>0.022</td>
+            <td>9.81</td>
+            <td>1.2</td>
+            <td>0.65</td>
+            <td>0.017</td>
+        </tr>
+        </table>
+
+        <table>
+        <tr>
+            <td>\(t_1(C)\)</td>
             <td><input type="number" id="t_1" name="t_1" size="300" placeholder="t_1"></td>
         </tr>
         <tr>
-            <td>t_2(C)</td>
+            <td>\(t_2(C)\)</td>
             <td><input type="number" id="t_2" name="t_2" size="300" placeholder="t_2"></td>
         </tr>
         <tr>
-            <td>t_w(C)</td>
+            <td>\(t_w(C)\)</td>
             <td><input type="number" id="t_w" name="t_w" size="300" placeholder="t_w"></td>
         </tr>
         <tr>
-            <td>delta_p(kpa)</td>
+            <td>\(\Delta_p(kpa)\)</td>
             <td><input type="number" id="delta_p" name="delta_p" size="300" placeholder="delta_p"></td>
         </tr>
         
@@ -77,71 +82,83 @@
             }
             </style>
             <tr>
-                <th>rho_t1(kg/m^3)</th>
+                <th>\(\rho_{t1}(kg/m^3)\)</th>
                 <td id="rho_t1"></td>
             </tr>
             <tr>
-                <th>t_m(C)</th>
+                <th>\(t_m(C)\)</th>
                 <td id="t_m"></td>
             </tr>
             <tr>
-                <th>rho(kg/m^3)</th>
+                <th>\(\rho (kg/m^3)\)</th>
                 <td id="rho"></td>
             </tr>
             <tr>
-                <th>lambda*100[W/(m*K)]</th>
+                <th>\(\lambda \times 100[W/(m \cdot K)]\)</th>
                 <td id="lambda_100"></td>
             </tr>
             <tr>
-                <th>c_p</th>
+                <th>\(c_p(J/(kg \cdot C)) \)</th>
                 <td id="c_p"></td>
             </tr>
             <tr>
-                <th>mu*10^5(pa*s)</th>
+                <th>\(\mu \times 10^5(pa \cdot s)\)</th>
                 <td id="mu_105"></td>
             </tr>
             <tr>
-                <th>delta_t(C)</th>
+                <th>\(\Delta _t(C)\)</th>
                 <td id="delta_tm"></td>
             </tr>
             <tr>
-                <th>Vt_1_h</th>
+                <th>\(Vt_{1} (m^3/h)\)</th>
                 <td id="Vt_1_h"></td>
             </tr>
             <tr>
-                <th>Vt_m_h</th>
+                <th>\(Vt_m (m^3/h)\)</th>
                 <td id="Vt_m_h"></td>
             </tr>
             <tr>
-                <th>F(m^2)</th>
+                <th>\(F(m^2)\)</th>
                 <td id="F"></td>
             </tr>
             <tr>
-                <th>u(m/s)</th>
+                <th>\(u(m/s)\)</th>
                 <td id="u"></td>
             </tr>
             <tr>
-                <th>Q</th>
+                <th>\(m_s(kg/s) \)</th>
+                <td id="m_s"></td>
+            </tr>
+            <tr>
+                <th>\(Q(J)\)</th>
                 <td id="Q"></td>
             </tr>
             <tr>
-                <th>S_i(m^2)</th>
+                <th>对数平均推动力\(\Delta t_m(C) \)</th>
+                <td id="delta_lnt"></td>
+            </tr>
+            <tr>
+                <th>传热系数K(\(W/(m^2 \cdot C)  \))</th>
+                <td id="K"></td>
+            </tr>
+            <tr>
+                <th>\(S_i(m^2)\)</th>
                 <td id="S_i"></td>
             </tr>
             <tr>
-                <th>alpha_i</th>
+                <th>\(\alpha_i(W/(m^2 \cdot C)) \)</th>
                 <td id="alpha_i"></td>
             </tr>
             <tr>
-                <th>Re</th>
+                <th>\(Re\)</th>
                 <td id="Re"></td>
             </tr>
             <tr>
-                <th>Nu</th>
+                <th>\(Nu\)</th>
                 <td id="Nu"></td>
             </tr>
             <tr>
-                <th>Nu / Pr^0.4</th>
+                <th>\(\frac{Nu}{Pr^{0.4}} \)</th>
                 <td id="NP"></td>
             </tr>
         </table>
@@ -179,21 +196,25 @@
                 var lambdaa_K = 0.02437 + 7.83333 * Math.pow(10,-5) * t_m_K - 1.51515 * Math.pow(10,-8) * Math.pow(t_m_K,2);
                 var lambda_100 = lambdaa * 100;
                 var lambda_100_K = lambdaa_K * 100;
-                var S_i = Math.PI * d_in * l;
+                var S_i = Math.PI * d_out * l;
                 var A_0 = Math.PI * Math.pow(d,2) / 4
                 var Vt_1 = C_0 * A_0 * Math.pow(2 * delta_p / rho_t1,0.5)
                 var Vt_1_h = Vt_1 * 3600 ;
                 var Vt_m = Vt_1 * (273 + t_m) / (273 + t_1);
                 var Vt_m_h = Vt_m * 3600;
                 var F = Math.PI * Math.pow(d_in,2) / 4;
+                var delta_lnt = (t_2 - t_1) / Math.log((t_w - t_1) / (t_w - t_2));
                 var u = Vt_m / F;   
-
+                var m_s = rho * Vt_1_h / 3600;
                 var Q = Vt_m * rho * c_p * delta_t;
-                var alpha_i = Q / (delta_tm * S_i);
+                var K = Q / (S_i * delta_lnt);
+                var alpha_i = K * (d_out / d_in);
                 var Re = d_in * u * rho / mu;
                 var Nu = alpha_i * d_in / lambdaa;
                 var Pr = c_p * mu / lambdaa;
                 var NP = Nu / Math.pow(Pr,0.4);
+                
+            
                 document.getElementById("rho_t1").innerHTML = rho_t1.toFixed(3);
                 document.getElementById("t_m").innerHTML = t_m.toFixed(1);
                 document.getElementById("rho").innerHTML =  rho.toFixed(3);
@@ -206,12 +227,15 @@
                 document.getElementById("Vt_m_h").innerHTML = Vt_m_h.toFixed(3);
                 document.getElementById("F").innerHTML = F.toFixed(6);
                 document.getElementById("u").innerHTML = u.toFixed(2);
+                document.getElementById("m_s").innerHTML = m_s.toFixed(4);
                 document.getElementById("Q").innerHTML = Q.toFixed(2);
                 document.getElementById("S_i").innerHTML = S_i.toFixed(3);
                 document.getElementById("alpha_i").innerHTML = alpha_i.toFixed(2);
-                document.getElementById("Re").innerHTML = Re.toFixed(1);
-                document.getElementById("Nu").innerHTML = Nu.toFixed(1);
-                document.getElementById("NP").innerHTML = NP.toFixed(1);
+                document.getElementById("Re").innerHTML = Re.toFixed(2);
+                document.getElementById("Nu").innerHTML = Nu.toFixed(2);
+                document.getElementById("NP").innerHTML = NP.toFixed(2);
+                document.getElementById("delta_lnt").innerHTML = delta_lnt.toFixed(2);
+                document.getElementById("K").innerHTML = K.toFixed(2);
             }
         </script>
     </body>
