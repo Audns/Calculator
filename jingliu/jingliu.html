@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jingliu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>jingliu calculator</h2>
+    <h3>全回流</h3>
+    <ul>
+        <li>塔顶温度t_D=<input type="number" id="t_D" value="0" placeholder="t_d"></li>
+        <li>塔釜温度t_W=<input type="number" id="t_W" value="0" placeholder="t_l"></li>
+        <li>回流液温度t_L=<input type="number" id="t_L" value="0" placeholder="t_l"></li>
+        <li>进料温度t_F=<input type="number" id="t_F" value="0" placeholder="t_d"></li>
+        <li>塔釜压力pa=<input type="number" id="pa" value="0" placeholder="t_d"></li>
+        <li>塔釜加热功率P=<input type="number" id="P" value="0" placeholder="t_d"></li>
+        <li>进料流量Q=<input type="number" id="Q" value="0" placeholder="t_d"></li>
+        <li>回流流量L=<input type="number" id="L" value="0" placeholder="t_d"></li>
+        <li>塔顶采出流量D=<input type="number" id="D" value="0" placeholder="t_d"></li>
+        <li>塔釜采出流量W=<input type="number" id="W" value="0" placeholder="t_d"></li>
+        <li>塔顶轻组分含量W_D=<input type="number" id="W_D" value="0" placeholder="t_d"></li>
+        <li>塔釜轻组分含量W_W=<input type="number" id="W_W" value="0" placeholder="t_d"></li>
+        <li>进料轻组分含量W_F=<input type="number" id="W_F" value="0" placeholder="t_d"></li>
+        <li>塔顶轻组分摩尔含量x_D=<input type="number" id="x_D" value="0" placeholder="t_d"></li>
+        <li>塔釜轻组分摩尔含量x_W=<input type="number" id="x_W" value="0" placeholder="t_d"></li>
+        <li>塔釜轻组分摩尔含量x_F=<input type="number" id="x_F" value="0" placeholder="t_d"></li>
+        <li>回流比F=<input type="number" id="F" value="0" placeholder="t_d"></li>
+        <li>进料泡点温度t_BP=<input type="number" id="t_BP" value="0" placeholder="t_d"></li>
+        <li>进料与泡点的平均温度t=<input type="number" id="t" value="0" placeholder="t_d"></li>
+        <li>进料再平均温度下的比热Cpm=<input type="number" id="Cpm" value="0" placeholder="t_d"></li>
+        <li>进料再泡点温度下的汽化潜热r_m=<div id="r_m"></div></li>
+        <li>进料热状况参数q=<div id="q"></div></li>
+    </ul>
+    <br>
+    <h3>部分回流</h3>
+    <ul>
+        <li>塔顶温度t_D=<input type="number" id="t_D" value="0" placeholder="t_d"></li>
+        <li>塔釜温度t_W=<input type="number" id="t_W" value="0" placeholder="t_l"></li>
+        <li>回流液温度t_L=<input type="number" id="t_L" value="0" placeholder="t_l"></li>
+        <li>进料温度t_F=<input type="number" id="t_F" value="0" placeholder="t_d"></li>
+        <li>塔釜压力pa=<input type="number" id="pa" value="0" placeholder="t_d"></li>
+        <li>塔釜加热功率P=<input type="number" id="P" value="0" placeholder="t_d"></li>
+        <li>进料流量Q=<input type="number" id="Q" value="0" placeholder="t_d"></li>
+        <li>回流流量L=<input type="number" id="L" value="0" placeholder="t_d"></li>
+        <li>塔顶采出流量D=<input type="number" id="D" value="0" placeholder="t_d"></li>
+        <li>塔釜采出流量W=<input type="number" id="W" value="0" placeholder="t_d"></li>
+        <li>塔顶轻组分含量W_D=<input type="number" id="W_D" value="0" placeholder="t_d"></li>
+        <li>塔釜轻组分含量W_W=<input type="number" id="W_W" value="0" placeholder="t_d"></li>
+        <li>进料轻组分含量W_F=<input type="number" id="W_F" value="0" placeholder="t_d"></li>
+        <li>塔顶轻组分摩尔含量x_D=<input type="number" id="x_D" value="0" placeholder="t_d"></li>
+        <li>塔釜轻组分摩尔含量x_W=<input type="number" id="x_W" value="0" placeholder="t_d"></li>
+        <li>塔釜轻组分摩尔含量x_F=<input type="number" id="x_F" value="0" placeholder="t_d"></li>
+        <li>回流比F=<input type="number" id="F" value="0" placeholder="t_d"></li>
+        <li>进料泡点温度t_BP=<input type="number" id="t_BP" value="0" placeholder="t_d"></li>
+        <li>进料与泡点的平均温度t=<input type="number" id="t" value="0" placeholder="t_d"></li>
+        <li>进料再平均温度下的比热Cpm=<input type="number" id="Cpm" value="0" placeholder="t_d"></li>
+        <li>进料再泡点温度下的汽化潜热r_m=<div id="r_m"></div></li>
+        <li>进料热状况参数q=<div id="q"></div></li>
+    </ul>
+<script>
+    //全回流数据//
+    const t_D = document.getElementById('t_D_p');
+    const t_W = document.getElementById('t_W_p');
+    const t_L = document.getElementById('t_L_p');
+    const t_F = document.getElementById('t_F_p');
+    const pa = document.getElementById('pa_p');
+    const P = document.getElementById('P_p');
+    const Q = document.getElementById('Q_p');
+    const L = document.getElementById('L_p');
+    const D = document.getElementById('D_p');
+    const W = document.getElementById('W_p');
+    const W_D = document.getElementById('W_D_p');
+    const W_W = document.getElementById('W_W_p');
+    const W_F = document.getElementById('W_F_p');
+    const x_D = document.getElementById('x_D_p');
+    const x_W = document.getElementById('x_W_p');
+    const x_F = document.getElementById('x_F_p');
+    const F = document.getElementById('F_p');
+    const t_BP = document.getElementById('t_BP_p');
+    const t = document.getElementById('t_p');
+    const Cpm = document.getElementById('Cpm_p');
+    
+    //部分回流数据//
+    const t_D = document.getElementById('t_D_p');
+    const t_W = document.getElementById('t_W_p');
+    const t_L = document.getElementById('t_L_p');
+    const t_F = document.getElementById('t_F_p');
+    const pa = document.getElementById('pa_p');
+    const P = document.getElementById('P_p');
+    const Q = document.getElementById('Q_p');
+    const L = document.getElementById('L_p');
+    const D = document.getElementById('D_p');
+    const W = document.getElementById('W_p');
+    const W_D = document.getElementById('W_D_p');
+    const W_W = document.getElementById('W_W_p');
+    const W_F = document.getElementById('W_F_p');
+    const x_D = document.getElementById('x_D_p');
+    const x_W = document.getElementById('x_W_p');
+    const x_F = document.getElementById('x_F_p');
+    const F = document.getElementById('F_p');
+    const t_BP = document.getElementById('t_BP_p');
+    const t = document.getElementById('t_p');
+    const Cpm = document.getElementById('Cpm_p');
+    M1 = 1;
+    M2 = 1;
+    //全回流条件下的总板效率//
+    x_D_a = (W_D / M1) / ((W_D / M1) + ((1 - W_D) / M2)) * 100;//塔顶乙醇的摩尔含量//
+    x_W_a = (W_W / M1) / ((W_W / M1) + ((1 - W_W) / M2)) * 100;//塔釜乙醇的摩尔含量//
+    //部分回流条件下的总板效率//
+    x_D_p = (W_D / M1) / ((W_D / M1) + ((1 - W_D) / M2)) * 100;
+    x_W_p = (W_W / M1) / ((W_W / M1) + ((1 - W_W) / M2)) * 100;
+
+    x_F =  (W_F / M1) / ((W_F / M1) + ((1 - W_F) / M2)) * 100;
+    
+    R = L / W;//回流比//
+    t_BP = 9.1389 * pow(x_F, 2) - 27.861 * x_F + 97.359;
+    r1 = ;//乙醇的摩尔汽化热//
+    r2 = ;//正丙醇的摩尔汽化热//、
+    const r_m = r1 * M1 * x_F + r2 * M2 * (1 - x_F);//进料在泡点温度的平均温度//
+    Cp1 = ;//乙醇的定压比热容//
+    Cp2 = ;//正丙醇的定压比热容//
+    Cpm = Cp1 * M1 * x_F + Cp2 * M2 * (1 - x_F);
+    const q = (Cpm * (t_BP - t_F) + r_m) / r_m
+    document.getElementById('r_m').innerHTML = r_m.toFixed(2);
+    document.getElementById('q').innerHTML = q.toFixed(2);
+</script>
+</body>
+</html>
