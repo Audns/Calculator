@@ -61,26 +61,26 @@
     </ul>
 <script>
     //全回流数据//
-    const t_D = document.getElementById('t_D_p');
-    const t_W = document.getElementById('t_W_p');
-    const t_L = document.getElementById('t_L_p');
-    const t_F = document.getElementById('t_F_p');
-    const pa = document.getElementById('pa_p');
-    const P = document.getElementById('P_p');
-    const Q = document.getElementById('Q_p');
-    const L = document.getElementById('L_p');
-    const D = document.getElementById('D_p');
-    const W = document.getElementById('W_p');
-    const W_D = document.getElementById('W_D_p');
-    const W_W = document.getElementById('W_W_p');
-    const W_F = document.getElementById('W_F_p');
-    const x_D = document.getElementById('x_D_p');
-    const x_W = document.getElementById('x_W_p');
-    const x_F = document.getElementById('x_F_p');
-    const F = document.getElementById('F_p');
-    const t_BP = document.getElementById('t_BP_p');
-    const t = document.getElementById('t_p');
-    const Cpm = document.getElementById('Cpm_p');
+    const t_D = document.getElementById('t_D');
+    const t_W = document.getElementById('t_W');
+    const t_L = document.getElementById('t_L');
+    const t_F = document.getElementById('t_F');
+    const pa = document.getElementById('pa');
+    const P = document.getElementById('P');
+    const Q = document.getElementById('Q');
+    const L = document.getElementById('L');
+    const D = document.getElementById('D');
+    const W = document.getElementById('W');
+    const W_D = document.getElementById('W_D');
+    const W_W = document.getElementById('W_W');
+    const W_F = document.getElementById('W_F');
+    const x_D = document.getElementById('x_D');
+    const x_W = document.getElementById('x_W');
+    const x_F = document.getElementById('x_F');
+    const F = document.getElementById('F');
+    const t_BP = document.getElementById('t_BP');
+    const t = document.getElementById('t');
+    const Cpm = document.getElementById('Cpm');
     
     //部分回流数据//
     const t_D = document.getElementById('t_D_p');
@@ -103,26 +103,39 @@
     const t_BP = document.getElementById('t_BP_p');
     const t = document.getElementById('t_p');
     const Cpm = document.getElementById('Cpm_p');
+
+
+
     M1 = 46;
     M2 = 60;
+
+
     //全回流条件下的总板效率//
+
     x_D_a = (W_D / M1) / ((W_D / M1) + ((1 - W_D) / M2)) * 100;//塔顶乙醇的摩尔含量//
     x_W_a = (W_W / M1) / ((W_W / M1) + ((1 - W_W) / M2)) * 100;//塔釜乙醇的摩尔含量//
-    //部分回流条件下的总板效率//
-    x_D_p = (W_D / M1) / ((W_D / M1) + ((1 - W_D) / M2)) * 100;
-    x_W_p = (W_W / M1) / ((W_W / M1) + ((1 - W_W) / M2)) * 100;
 
-    x_F =  (W_F / M1) / ((W_F / M1) + ((1 - W_F) / M2)) * 100;
+
+    //部分回流条件下的总板效率//
+    x_D_p = (W_D_p / M1) / ((W_D_p / M1) + ((1 - W_D_p) / M2)) * 100;
+    x_W_p = (W_W_p / M1) / ((W_W_p / M1) + ((1 - W_W_p) / M2)) * 100;
+
+
+    x_F =  (W_F / M1) / ((W_F / M1) + ((1 - W_F) / M2)) * 100;//进料乙醇的摩尔含量//
     
-    R = L / W;//回流比//
+    R = L_p / W_p;//回流比//
     t_BP = 9.1389 * pow(x_F, 2) - 27.861 * x_F + 97.359;
+    //插值法求r//
     r1 = ;//乙醇的摩尔汽化热//
     r2 = ;//正丙醇的摩尔汽化热//、
     const r_m = r1 * M1 * x_F + r2 * M2 * (1 - x_F);//进料在泡点温度的平均温度//
+
+    t = (T_F + T_BP) / 2;
+    //插值法求Cp//
     Cp1 = ;//乙醇的定压比热容//
     Cp2 = ;//正丙醇的定压比热容//
     Cpm = Cp1 * M1 * x_F + Cp2 * M2 * (1 - x_F);
-    const q = (Cpm * (t_BP - t_F) + r_m) / r_m
+const q = (Cpm * (t_BP - t_F) + r_m) / r_m
     document.getElementById('r_m').innerHTML = r_m.toFixed(2);
     document.getElementById('q').innerHTML = q.toFixed(2);
 </script>
