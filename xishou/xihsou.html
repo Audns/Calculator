@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xishou</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="script.js">
+    <body>
+        <h3>xishou calculator</h3>
+
+        <table>
+            <tr>
+                <td>吸收塔塔径(m)</td>
+                <td><input type="number" id="D" value="0.075"></td>
+                <td>填料层高度(m)</td>
+                <td><input type="number" id="Z" value="0.78"></td>
+            </tr>
+            <tr>
+                <td>U性管压差计内液体密度</td>
+                <td><select id="select_rho">
+                    <option value="option1">Dynamic</option>
+                    <option value="option2">1000.0kg/m^3</option>
+                </select></td>
+                <td>g</td>
+                <td><input type="number" id="g" value="9.81"></td>
+            </tr>
+            <tr>
+                <td>滴定HCl浓度(mol/L)</td>
+                <td><input type="number" id="c_HCl" value="0.10"></td>
+                <td>Ba(OH)2浓度(mol/L)</td>
+                <td><input type="number" id="c_Ba" value="0.10"></td>
+            </tr>
+            <tr>
+                <td>样品中加Ba(OH)2体积(mL)</td>
+                <td><input type="number" id="V_Ba" value="10.00"></td>
+                <td>亨利系数(Pa)</td>
+                <td><input type="number" id="E" value="166000000"></td>
+            </tr>
+            <tr>
+                <td>常温常压CO2密度(kg/m^3)</td>
+                <td><input type="number" id="rho_co2" value="1.85"></td>
+
+            </tr>
+            <tr>
+                <td>空气平均摩尔质量</td>
+                <td><input type="number" id="M1" value="29.0"></td>
+                <td>R</td>
+                <td><input type="number" id="R" value="9.81"></td>
+            </tr>
+        </table>
+        <br><hr><br>
+        <h3>填料塔流体力学性能测定实验数据计算</h3>
+        <table>
+            <tr>
+            <td>吸收塔空气流量Q</td>
+                <td><input type="number" id="Q" placeholder="m^3/h" step="0.1"></td>
+                <td>U型管高度差读数</td>
+                <td><input type="number" id="delta_h" placeholder="cm" step="0.1"></td>
+            </tr>
+            <tr>
+                <td>温度</td>
+                <td><input type="number" id="T" value="25" step="0.1"></td>
+            </tr>
+        </table>
+        <p><button onclick="calculate()">calculate</button></p>
+        <table>
+            <tr>
+                <td>塔压降Delta_P</td>
+                <td id="delta_P"></td>
+            </tr>
+            <tr>
+                <td>单位填料层压降</td>
+                <td id="delta_P_unit"></td>
+            </tr>
+        </table>
+        <h3>二氧化碳吸收解吸传质实验数据计算</h3>
+        <table>
+            <tr>
+                <td>吸收塔空气流量Q</td>
+                <td><input type="number" id="Q2" placeholder="Nm^3/h"></td>
+                <td>空气温度T</td>
+                <td><input type="number" id="T2" placeholder="C"></td>
+            </tr>
+        </table>
+        <p><button onclick="calculate2()">calculate</button></p>
+        <table>
+            <tr>
+                <td>空气密度</td>
+                <td id="rho_kq"></td>
+            </tr>
+            <tr>
+                <td>空气流量</td>
+                <td id="V2"></td>
+            </tr>
+        </table>
+    </body>
+</html>
