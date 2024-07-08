@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cuiqu</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h3>基础数据</h3>
+        <table>
+            <tr>
+                <td>萃取塔塔高</td>
+                <td><input type="number" id="h" value="0.900"></td>
+                <td>NaOH浓度</td>
+                <td><input type="number" id="rho_NaOH" value="0.010"></td>
+            </tr>
+            <tr>
+                <td>苯甲酸分子量</td>
+                <td><input type="number" id="M1" value="122.240"></td>
+                <td>取样煤油体积</td>
+                <td><input type="number" id="V" value="25.000"></td>
+            </tr>
+            <tr>
+                <td>水密度</td>
+                <td><select id="select_rho">
+                    <option value="option1">Dynamic</option>
+                    <option value="option2">999.000</option>
+                </select></td>
+                <td>油密度</td>
+                <td><select id="select_rho_oil">
+                    <option value="option1">Dynamic</option>
+                    <option value="option2">799.000</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>转子密度</td>
+                <td><select id="select_rho_zhuanzi">
+                    <option value="option1">Dynamic</option>
+                    <option value="option2">7850.000</option>
+                </select></td>
+                <td>筛板振幅</td>
+                <td><input type="number" id="amp" value="20.000"></td>
+            </tr>
+        </table>
+        <br><hr><br>
+        <p><button onclick="calculate()">calculate</button></p>
+        <table>
+            <tr>
+                <td>振动频率</td>
+                <td><input type="number" id="rpm" placeholder="rpm" step="10"></td>
+                
+            </tr>
+            <tr>
+                <td>油进口NaOH消耗量</td>
+                <td><input type="number" id="V_in" placeholder="mL" step="1"></td>
+                <td>油出口NaOH消耗量</td>
+                <td><input type="number" id="V_out" placeholder="mL" step="1"></td>
+            </tr>
+            <tr>
+                <td>油流量</td>
+                <td><input type="number" id="V_oil" placeholder="L/h"></td>
+                <td>水流量</td>
+                <td><input type="number" id="V_water" placeholder="L/h"></td>
+            </tr>
+            <tr>
+                <td>油出口浓度*10000</td>
+                <td><input type="number" id="rho_oil_out" placeholder="kg苯甲酸/kg油"></td>
+                <td>水出口浓度*10000</td>
+                <td><input type="number" id="rho_water_out" placeholder="kg苯甲酸/kg水"></td>
+            </tr>
+            <tr>
+                <td>推动力*10000</td>
+                <td><input type="number" id="avgpower" placeholder="deltaXm*10000"></td>
+                <td>传质单元高度HOR</td>
+                <td><input type="number" id="HOR" placeholder="m"></td>
+            </tr>
+            <tr>
+                <td>效率</td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>
