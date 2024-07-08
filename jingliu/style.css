@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(240, 218, 194);
+}
+
+button {
+    width: 250px;
+    height: 30px;
+}
+
+select {
+    width: 200px;
+    height: 25px;
+}
+
+input {
+    width: 80px;
+    height: 25px;
+}
