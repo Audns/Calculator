@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>二氧化碳吸收与解析</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="inputpage">
+            <h2>二氧化碳吸收与解析</h2>
+            <h3>基础数据</h3>
+            <label for="h">萃取塔塔高(m)</label>
+            <input type="number" id="h" value="0.900" class="data" step="0.1" required placeholder="m">
+            <br>
+            <label for="c_naoh">NaOH浓度(mol/L)</label>
+            <input type="number" id="c_naoh" value="0.010" class="data" step="0.1" required placeholder="mol/L">
+            <br>
+            <label for="M_bch3">苯甲酸分子量</label>
+            <input type="number" id="M1" value="122.240" class="data" step="0.1" required>
+            <br>
+            <label for="V_oil">取样煤油体积(mL)</label>
+            <input type="number" id="V" value="25.000" class="data" step="0.1" required>
+            <br>
+            <label for="select_rho">水密度</label>    
+            <select id="select_rho">
+                <option value="option1">Dynamic</option>
+                <option value="option2">999.000kg/m^3</option>
+            </select>
+            <label for="select_rho_oil">油密度</label>
+            <select id="select_rho_oil">
+                <option value="option1">Dynamic</option>
+                <option value="option2">799.000kg/m^3</option>
+            </select>
+            <label for="select_rho_zhuanzi">转子密度</label>
+            <select id="select_rho_zhuanzi">
+                <option value="option1">Dynamic</option>
+                <option value="option2">7850.000</option>
+            </select>
+            <br>
+            <label for="amp">筛板振幅(cm)</label>
+            <input type="number" id="amp" value="20.000" class="data" step="0.1" placeholder="cm">
+            <br>
+            <label for="T">T</label>
+            <input type="number" id="T" class="data" step="0.1" placeholder="C">
+            <br>
+            <label for="rpm">振动频率</label>
+            <input type="number" id="rpm" placeholder="rpm" step="10" class="data">
+            <br>
+            <label for="V_in">油进口NaOH消耗量</label>
+            <input type="number" id="V_in" placeholder="mL" step="0.1" class="data">
+            <br>
+            <label for="V_out">油出口NaOH消耗量</label>
+            <input type="number" id="V_out" placeholder="mL" step="0.1" class="data">
+            <br>
+            <label for="Q_oil">油流量</label>
+            <input type="number" id="V_oil" placeholder="L/h" class="data">
+            <br>
+            <label for="V_water">水流量</label>
+            <input type="number" id="V_water" placeholder="L/h" class="data">
+            <br>
+            <label for="rho_oil_out">油出口浓度*10000</label>
+            <input type="number" id="rho_oil_out" placeholder="kg苯甲酸/kg油" class="data">
+            <br>
+            <label for="rho_water_out">水出口浓度*10000</label>
+            <input type="number" id="rho_water_out" placeholder="kg苯甲酸/kg水" class="data">
+            <br>
+            <label for="avgpower">推动力&times;10000</label>
+            <input type="number" id="avgpower" placeholder="&Delta;Xm&times;10000" class="data">
+            <br>
+            <label for="HOR">传质单元高度HOR</label>
+            <input type="number" id="HOR" placeholder="m" class="data">
+            <br><br>
+            <input type="submit" id="calbutton" value="calculate/Enter">
+        </div>
+        
+            
+            
+        </div>
+        <div id="outputpage">
+            
+            <input type="button" id="backbutton" value="go back/Esc">
+            <br><br>
+            <h2>输出结果</h2>
+            <br>
+            <label for="eta">效率%=</label>
+            <span id="eta"></span>
+            <br>
+            <label for="y1">吸收塔入口CO2分率(%)=</label>
+            <span id="y1"></span>
+            <br>
+            <label for="y2">吸收塔出口CO2分率(%)=</label>
+            <span id="y2"></span>
+            <br>
+            <label for="H">溶解度常数H&times;10<sup>7</sup>/&#40;kmol&middot;m<sup>-3</sup>&middot;pa<sup>-1</sup>&#41;=</label>
+            <span id="H"></span>
+            <br>
+            <label for="c_a1s">吸收塔出口CO2平衡浓度C<sub>A1*</sub>&times;10<sup>3</sup>=</label>
+            <span id="c_a1s"></span>
+            <br>
+            <label for="c_a2s">吸收塔出口CO2平衡浓度C<sub>A2*</sub>&times;10<sup>3</sup>=</label>
+            <span id="c_a2s"></span>
+            <br>
+            <label for="c_a1">吸收塔出口CO2实际浓度C<sub>A1</sub>&times;10<sup>3</sup>=</label>
+            <span id="c_a1"></span>
+            <br>
+            <label for="c_a1">吸收塔入口CO2实际浓度C<sub>A2</sub>&times;10<sup>3</sup>=</label>
+            <span id="c_a2"></span>
+            <br>
+            <label for="deltacam">平均推动力&Delta;C<sub>Am</sub>=</label>
+            <span id="deltacam"></span>
+            <br>
+            <label for="HTU">液相传质单元高度HTU=</label>
+            <span id="HTU"></span>
+            <br>
+            <label for="kla">液相传质系数=</label>
+            <span id="kla"></span>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

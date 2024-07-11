@@ -1,0 +1,42 @@
+html {
+    background-color: blanchedalmond;
+}
+#inputpage {
+    font-size: 26px;
+    width: 700px;
+    display: block;
+}
+label {
+    font-size: 26px;
+}
+select {
+    height: 28px;
+    width: 120px;
+    background-color: antiquewhite;
+    position: sticky;
+}
+.data {
+    font-size: 26px;
+    height: 30px;
+    width: 200px;
+    border-top: 0cap;
+    border-left: 0cap;
+    border-right: 0cap;
+    background-color: blanchedalmond;
+    text-align: left;
+    margin-left: auto;
+}
+#calbutton {
+    font-size: 26px;
+    width: 300px;
+    height: 50px;
+}
+
+#outputpage {
+    display: none;
+}
+#backbutton {
+    font-size: 26px;
+    width: 300px;
+    height: 50px;
+}
