@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jingliu calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <body>
+        <h1>精馏实验</h1>
+        <div id="inputpage">
+            
+            <h2>基本数据</h2>
+            <label for="N">实际塔板数N=</label>
+            <input type="number" id="N" value="10" class="data">
+            <br>
+            <label for="M1">乙醇分子量M1=</label>
+            <input type="number" id="M1" value="46" class="data">
+            <br>
+            <label for="M2">正丙醇分子量M2=</label>
+            <input type="number" id="M2" value="60" class="data">
+            <br>
+            <h2>全回流</h2>
+            <select id="select1">
+                <option value="option1">乙醇-正丙醇</option>
+                <option value="option2">乙醇-水</option>
+                <option value="option3">苯-甲苯</option>
+            </select>
+            <br><br>
+            <label for="t_D">塔顶温度t_D=</label>
+            <input type="number" id="t_D" step="0.1" class="data">
+            <br>
+            <label for="t_W">塔釜温度t_W=</label>
+            <input type="number" id="t_W" step="0.1" class="data">
+            <br>
+            <label for="t_L">回流液温度t_L=</label>
+            <input type="number" id="t_L" step="0.1" class="data">
+            <br>
+            <label for="t_F">进料温度t_F=</label>
+            <input type="number" id="t_F" step="0.1" class="data"> 
+            <br>
+            <label for="kpa">塔釜压力kpa=</label>
+            <input type="number" id="kpa" class="data">
+            <br>
+            <label for="P">塔釜加热功率P=</label>
+            <input type="number" id="P" class="data">
+            <br>
+            <label for="Q">进料流量Q=</label>
+            <input type="number" id="Q" class="data">
+            <br>
+            <label for="L">回流流量L=</label>
+            <input type="number" id="L" class="data">
+            <br>
+            <label for="D">塔顶采出流量D=</label>
+            <input type="number" id="D" class="data">
+            <br>
+            <label for="W">塔釜采出流量W=</label>
+            <input type="number" id="W" class="data">
+            <br>
+            <label for="w_D">塔顶轻组分含量W_D=</label>
+            <input type="number" id="w_D" class="data">
+            <br>
+            <label for="w_W">塔釜轻组分含量W_W=</label>
+            <input type="number" id="w_W" class="data">
+            <br>
+            <label for="w_F">进料轻组分含量W_F=</label>
+            <input type="number" id="w_F" class="data">
+            <br><br>
+            <input type="submit" id="calbutton" value="calculate">
+        </div>
+
+        <div id="outputpage">
+            <input type="button"  id="backbutton" value="back">
+            <br>
+
+            <h2>输出结果</h2>
+            <br>
+            <label for="x_D">塔顶轻组分摩尔含量x_D=</label>
+            <span id="x_D" class="output"></span>
+            <br>
+            <label for="x_W">塔釜轻组分摩尔含量x_W=</label>
+            <span id="x_W" class="output"></span>
+            <br>
+            <label for="x_F">塔釜轻组分摩尔含量x_F=</label>
+            <span id="x_F" class="output"></span>
+            <br>
+            <label for="F">回流比F=</label>
+            <span id="F" class="output"></span>
+            <br>
+            <label for="t_BP">进料泡点温度t_BP=</label>
+            <span id="t_BP" class="output"></span>
+            <br>
+            <label for="t">进料与泡点的平均温度t=</label>
+            <span id="t" class="output"></span>
+            <br>
+            <label for="Cpm">进料再平均温度下的比热Cpm=</label>
+            <span id="Cpm" class="output"></span>
+            <br>
+            <label for="r_m">进料再泡点温度下的汽化潜热r_m=</label>
+            <span id="r_m" class="output"></span>
+            <br>
+            <label for="q">进料热状况参数q=</label>
+            <span id="q" class="output"></span>
+        </div>
+        
+    </body>
+    <script src="script.js"></script>
+</html>
