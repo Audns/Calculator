@@ -1,0 +1,28 @@
+html {
+    background-color: blanchedalmond;
+}
+a {
+    font-size: 26px;
+}
+.button {
+    display: inline-block;
+    font-size: 22px;
+    width: 180px;
+    height: 26px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(98, 160, 218);
+    border: 0cap;
+    box-shadow: 2px 2px black;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.button:hover {
+    background-color: #2980b9;
+}
+
+.button:active {
+    box-shadow: 0 0 0px 0;
+    background-color: #1f618d;
+}
