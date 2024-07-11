@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洞道干燥实验</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="homepage" href="https://audns.github.io/calculator/" target="_blank">化工原理实验</a>
+    <h2>洞道干燥实验</h2>
+    <hr>
+    <div id="inputpage">
+        <label for="R">空气孔板流量计读数R:</label>
+        <input type="number" id="R" class="data" placeholder="kpa">
+        <br>
+        <label for="to">流量计处的空气温度to:</label>
+        <input type="number" id="to" class="data" placeholder="&deg;C">
+        <br>
+        <label for="t">干球温度t:</label>
+        <input type="number" id="t" class="data" placeholder="&deg;C">
+        <br>
+        <label for="t_w">湿球温度t_w:</label>
+        <input type="number" id="t_w" class="data" placeholder="&deg;C">
+        <br>
+        <label for="G_D">框架重量G_D:</label>
+        <input type="number" id="G_D" class="data" placeholder="g">
+        <br>
+        <label for="G_C">绝干物料量G_C:</label>
+        <input type="number" id="G_C" class="data" placeholder="g">
+        <br>
+        <label for="S">干燥面积S(m^2):</label>
+        <input type="number" id="S" class="data"value="0.021684">
+        <br>
+        <label for="S_cut">洞道截面积(m^2):</label>
+        <input type="number" id="S_cut" class="data" value="0.03">
+        <br><br>
+        <input type="submit" id="calbutton" class="button" value="calculate">
+    </div>
+
+    <div id="outputpage">
+        <input type="button" id="backbutton" value="back" class="button">
+        <br><br>
+        <label for="X">干基含水量X(kg/kg)=</label>
+        <span id="X" class="output"></span>
+        <br>
+        <label for="X_AV">平均含水量X_AV(kg/kg)=</label>
+        <span id="X_AV" class="output"></span>
+        <br>
+        <label for="U">干燥速率U&times;10^4=</label>
+        <span id="U" class="output"></span>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
