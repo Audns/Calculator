@@ -1,0 +1,85 @@
+Html {
+    Background-color: blanchedalmond;
+    height: 500px;
+    width: 800px;
+}
+
+.contentcontainer {
+    margin-left: 160px;
+    transition: 0.5s;
+    margin-top: 200px;
+    background-color: rgb(155, 235, 255);
+    width: 500px;
+    height: 420px;
+    border-radius: 18px;
+}
+
+.content {
+    font-size: 26px;
+    margin-left: 85px;
+    margin-top: 10%;
+}
+
+.sidebar {
+    background-color: rgb(186, 220, 248);
+    width: 300px;
+    left: -240px;
+    height: 100%;
+    position: fixed;
+    transition: 0.5s;
+}
+
+.sidebar:hover {
+    background-color: rgb(162, 176, 240);
+    left: 0;
+}
+
+.sidebar:hover + .contentcontainer {
+    margin-left: 350px;
+}
+
+a {
+    text-decoration: none;
+    width: 26px;
+}
+
+a:hover {
+    background-color: rgb(159, 87, 226);
+}
+
+.button {
+    background-color: rgb(133, 175, 238);
+    border: 0;
+    border-radius: 5px;
+    font-size: 26px;
+    box-shadow: 1px 1px;
+}
+
+.button:hover {
+    background-color: rgb(76, 137, 252);
+}
+
+.button:active {
+    background-color: rgb(115, 115, 223);
+    box-shadow: 0 0 ;
+}
+
+.sidebarcontent {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 26px;
+}
+
+.file {
+    border-bottom: 1px solid;
+    color: black;
+    margin-top: 5px;
+}
+
+.buttonlabel {
+    
+    font-size: 30px;
+    
+}
+
