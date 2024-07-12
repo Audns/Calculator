@@ -10,6 +10,7 @@ Html {
     width: 500px;
     height: 420px;
     border-radius: 18px;
+    margin-right: 100px;
 }
 
 .content {
