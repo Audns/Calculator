@@ -1,23 +1,23 @@
 Html {
-    Background-color: blanchedalmond;
+    Background-color: blanchedalmond;
+
     width: 800px;
 }
 
 .contentcontainer {
     margin-left: 160px;
     transition: 0.5s;
-    margin-top: 200px;
+    margin-top: 100px;
     background-color: rgb(155, 235, 255);
-    width: 500px;
-    height: 420px;
+    width: 600px;
+    height: 675px;
     border-radius: 18px;
     margin-right: 300px;
 }
 
 .content {
     font-size: 26px;
-    margin-left: 85px;
-    margin-top: 10%;
+    margin-left: 140px;
 }
 
 .sidebar {
@@ -38,25 +38,40 @@ Html {
     margin-left: 350px;
 }
 
-a {
-    text-decoration: none;
-    width: 26px;
+
+
+.topbar {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-a:hover {
-    background-color: rgb(159, 87, 226);
+.topbar-title {
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.topbar-title:hover {
+    background-color: rgb(190, 130, 247);
+    font-size: 60px;
 }
 
 .button {
     background-color: rgb(133, 175, 238);
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 26px;
-    box-shadow: 1px 1px;
+    height: 80px;
+    width: 300px;
+    transition: 0.3s;
 }
 
 .button:hover {
     background-color: rgb(76, 137, 252);
+    width: 320px;
+    height: 100px;
+    margin-left: -9px;
 }
 
 .button:active {
@@ -71,15 +86,17 @@ a:hover {
     font-size: 26px;
 }
 
+
 .file {
     border-bottom: 1px solid;
     color: black;
     margin-top: 5px;
+    text-decoration: none;
+    border-bottom: 0;
+    transition: 0.3s;
 }
 
-.buttonlabel {
-    
-    font-size: 30px;
+.file:hover {
+    background-color: rgb(157, 73, 235);
     
 }
-
